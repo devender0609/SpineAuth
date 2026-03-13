@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SpineAuth | Prior Authorization Packet Builder</title>
+  <style>
+    :root{
+      --bg:#f4f7fb;
+      --surface:#ffffff;
+      --surface-2:#f9fbff;
+      --line:#dde6f0;
+      --text:#16314f;
+      --muted:#6a7d93;
+      --brand:#155eef;
+      --brand-2:#0f3ea8;
+      --success:#067647;
+      --success-bg:#ecfdf3;
+      --warn:#b54708;
+      --warn-bg:#fff7ed;
+      --danger:#b42318;
+      --danger-bg:#fef3f2;
+      --info:#175cd3;
+      --info-bg:#eff8ff;
+      --shadow:0 12px 30px rgba(17,24,39,.08);
+      --radius:20px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,#eef4ff 0,#f7faff 120px,var(--bg) 120px);color:var(--text);font-family:Inter,Arial,Helvetica,sans-serif}
+    body{font-size:14px}
+    a{color:var(--brand)}
+    .wrap{max-width:1280px;margin:0 auto;padding:24px}
+    .hero{margin-bottom:24px}
+    .hero-card{width:100%;background:linear-gradient(135deg,#113a8f 0,#155eef 55%,#3f8cff 100%);color:#fff;border-radius:28px;padding:30px 32px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .hero-card:after{content:"";position:absolute;right:-60px;top:-30px;width:220px;height:220px;background:rgba(255,255,255,.08);border-radius:50%}
+    .hero h1{margin:0 0 8px;font-size:38px;line-height:1.08}
+    .hero p{margin:0;color:rgba(255,255,255,.94);max-width:980px;font-size:16px;line-height:1.7}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .tag{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.14);font-size:12px;font-weight:700;letter-spacing:.02em}
+
+    .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:22px}
+    .panel-body{padding:22px}
+    .section-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:18px}
+    .section-head h2{margin:0;font-size:22px}
+    .section-head p{margin:6px 0 0;color:var(--muted);font-size:14px;line-height:1.55}
+    .helper{font-size:12px;color:var(--muted)}
+
+    .form-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px 16px}
+    .span-12{grid-column:1/-1}.span-6{grid-column:span 6}.span-4{grid-column:span 4}.span-3{grid-column:span 3}
+    .field label{display:block;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#5b6d82;margin-bottom:8px}
+    .field input,.field select,.field textarea{width:100%;border:1px solid #cfd9e6;border-radius:14px;padding:13px 14px;font-size:14px;color:var(--text);background:#fff;outline:none;appearance:auto}
+    .field select option{white-space:nowrap}
+    .field textarea{min-height:108px;resize:vertical}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:#7fb0ff;box-shadow:0 0 0 4px rgba(21,94,239,.08)}
+    .muted-note{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.5}
+
+    .optional-box{margin-top:4px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#fbfdff 0,#f8fbff 100%);overflow:hidden}
+    .optional-box details{padding:0}
+    .optional-box summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:800;font-size:14px;color:var(--brand-2);display:flex;align-items:center;justify-content:space-between;user-select:none}
+    .optional-box summary::-webkit-details-marker{display:none}
+    .optional-box summary:after{content:"+";font-size:22px;line-height:1;color:var(--brand)}
+    .optional-box details[open] summary:after{content:"−"}
+    .optional-content{border-top:1px solid var(--line);padding:18px}
+
+    .upload-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .upload-box{border:1px dashed #aabdd4;border-radius:18px;background:linear-gradient(180deg,#fbfdff 0,#f7fbff 100%);padding:16px}
+    .upload-box strong{display:block;margin-bottom:6px;font-size:14px}
+    .upload-box p{margin:0 0 12px;color:var(--muted);font-size:12px;line-height:1.5}
+    .upload-box input{padding:10px;background:#fff}
+    .upload-status{margin-top:8px;font-size:12px;color:var(--muted);line-height:1.5;word-break:break-word}
+
+    .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .score-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;font-size:13px;font-weight:800;border:1px solid transparent}
+    .blue{background:var(--info-bg);color:var(--info);border-color:#bfdbfe}
+    .green{background:var(--success-bg);color:var(--success);border-color:#b7ebd0}
+    .yellow{background:var(--warn-bg);color:var(--warn);border-color:#fed7aa}
+    .red{background:var(--danger-bg);color:var(--danger);border-color:#fecaca}
+
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+    .btn{border:none;border-radius:14px;padding:13px 16px;font-size:14px;font-weight:800;cursor:pointer;transition:.15s ease}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--brand);color:#fff}
+    .btn-secondary{background:#fff;color:var(--brand);border:1px solid #bfd3ff}
+    .btn-soft{background:#f5f8fc;color:var(--text);border:1px solid var(--line)}
+
+    .results-stack{display:grid;gap:16px}
+    .subcard{border-radius:18px;padding:18px;border:1px solid var(--line);background:#fff}
+    .subcard h4{margin:0 0 10px;font-size:16px}
+    .subcard p{margin:0;color:var(--text);font-size:14px;line-height:1.7;white-space:pre-wrap}
+    .subcard ul{margin:0;padding-left:18px;color:var(--text);font-size:14px;line-height:1.7}
+    .two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .letterbox{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;white-space:pre-wrap;min-height:260px;max-height:520px;overflow:auto;font-size:13px;line-height:1.65}
+    .mini{font-size:12px;color:var(--muted)}
+    .kv{display:grid;gap:10px}
+    .info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 16px}
+    .info-item{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:12px}
+    .info-item .label{display:block;font-size:11px;font-weight:800;color:#5b6d82;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+    .source-list a{display:block;margin-bottom:6px;word-break:break-word}
+    .save-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .footer-note{margin-top:18px;color:var(--muted);font-size:12px;line-height:1.5}
+
+    @media (max-width:1100px){.upload-grid,.two-col,.info-grid{grid-template-columns:1fr}}
+    @media (max-width:780px){.form-grid{grid-template-columns:1fr}.span-12,.span-6,.span-4,.span-3{grid-column:auto}.hero h1{font-size:32px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div class="hero-card">
+        <h1>SpineAuth Packet Builder</h1>
+        <p>Upload the clinic note, imaging report, and insurance details once. The system builds a payer-facing prior authorization summary letter and clinic submission instructions with readiness scoring, without relying on a backend case queue.</p>
+        <div class="hero-tags">
+          <span class="tag">Zero-retention workflow</span>
+          <span class="tag">Professional insurer letter</span>
+          <span class="tag">Payer-specific guidance</span>
+          <span class="tag">Downloadable packet</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="panel">
+      <div class="panel-body">
+        <div class="section-head">
+          <div>
+            <h2>Upload records and generate authorization packet</h2>
+            <p>Enter basic patient and insurance information, upload the clinic note and imaging report, and the system will use the provided information to build a clinical summary letter for the insurer and submission guidance for the clinic team.</p>
+          </div>
+          <div class="helper" id="statusBadge">Loading setup…</div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field span-6"><label>Patient first name</label><input id="fname" type="text" placeholder="First name" /></div>
+          <div class="field span-6"><label>Patient last name</label><input id="lname" type="text" placeholder="Last name" /></div>
+          <div class="field span-3"><label>Date of birth</label><input id="dob" type="date" /></div>
+          <div class="field span-3"><label>Payer / insurance</label><select id="payerSelect"><option value="">Loading payers…</option></select></div>
+          <div class="field span-3"><label>Member ID</label><input id="memberId" type="text" placeholder="Member ID" /></div>
+          <div class="field span-3"><label>Ordering provider</label><select id="providerSelect"><option value="">Loading providers…</option></select></div>
+          <div class="field span-3"><label>NPI</label><input id="providerNpi" type="text" placeholder="Provider NPI" /></div>
+          <div class="field span-3"><label>Requested procedure</label><select id="procedureSelect"><option value="">Loading procedures…</option></select></div>
+
+          <div class="field span-12">
+            <label>Upload records</label>
+            <div class="upload-grid">
+              <div class="upload-box">
+                <strong>Clinic note</strong>
+                <p>Upload a note, H&amp;P, or office visit record. PDF, DOCX, or TXT all work well.</p>
+                <input id="clinicNoteFile" type="file" />
+                <div class="upload-status" id="clinicNoteStatus">No clinic note selected.</div>
+              </div>
+              <div class="upload-box">
+                <strong>Imaging / MRI report</strong>
+                <p>Upload MRI, CT, x-ray, or radiology report text. The tool will use it to strengthen the summary letter.</p>
+                <input id="imagingFile" type="file" />
+                <div class="upload-status" id="imagingFileStatus">No imaging report selected.</div>
+              </div>
+              <div class="upload-box">
+                <strong>Supporting files</strong>
+                <p>Upload PT notes, insurance worksheet, denial letter, or any extra supporting documents.</p>
+                <input id="supportingDocs" type="file" multiple />
+                <div class="upload-status" id="supportingDocsStatus">No supporting files selected.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field span-12">
+            <div class="optional-box">
+              <details>
+                <summary>Optional clinical details (used only if you want to supplement the uploaded records)</summary>
+                <div class="optional-content">
+                  <div class="form-grid">
+                    <div class="field span-6">
+                      <label>Diagnosis / ICD-10</label>
+                      <select id="diagnosisSelect"><option value="">Select procedure first</option></select>
+                      <div class="muted-note">If left blank, the system will rely on the uploaded records and your other inputs.</div>
+                    </div>
+                    <div class="field span-3"><label>Pain score</label><input id="painScore" type="number" min="0" max="10" step="1" placeholder="0–10" /></div>
+                    <div class="field span-3"><label>Symptom duration</label>
+                      <select id="durationSelect">
+                        <option value="">Select duration</option>
+                        <option>2 weeks</option><option>4 weeks</option><option>6 weeks</option><option>8 weeks</option>
+                        <option>12 weeks</option><option>6 months</option><option>1 year</option><option>&gt; 1 year</option>
+                      </select>
+                    </div>
+                    <div class="field span-6"><label>Conservative treatment summary</label><input id="conservativeTreatment" type="text" placeholder="Example: PT 8 weeks, NSAIDs, ESI" /></div>
+                    <div class="field span-6"><label>Referring provider</label><input id="referringProvider" type="text" placeholder="Optional" /></div>
+                    <div class="field span-6"><label>Clinical note summary</label><textarea id="notes" placeholder="Optional manual summary. If left blank, uploaded records are used to build the case summary."></textarea></div>
+                    <div class="field span-6"><label>Imaging summary</label><textarea id="imagingSummary" placeholder="Optional manual imaging summary. If left blank, uploaded imaging report text is used when available."></textarea></div>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+
+        <div class="pill-row" id="quickScoreRow"></div>
+        <div class="actions">
+          <button class="btn btn-primary" id="analyzeBtn">Generate packet summary</button>
+          <button class="btn btn-secondary" id="letterBtn">Refresh letter only</button>
+          <button class="btn btn-secondary" id="downloadBtn">Download ZIP packet</button>
+          <button class="btn btn-soft" id="printBtn">Print screen</button>
+          <button class="btn btn-soft" id="resetBtn">Start over</button>
+        </div>
+        <div class="footer-note">Use this tool as a preparation and documentation aid. Final submission still occurs through the insurer or delegated utilization management workflow shown below.</div>
+      </div>
+    </section>
+
+    <section class="results-stack">
+      <div class="subcard blue">
+        <h4>Insurance submission information</h4>
+        <div class="info-grid" id="insuranceInfoGrid">
+          <div class="info-item"><span class="label">Payer</span><div id="infoPayer">Run the packet builder to populate payer details.</div></div>
+          <div class="info-item"><span class="label">Portal / Workflow</span><div id="infoPortal">—</div></div>
+          <div class="info-item"><span class="label">Portal Link</span><div id="infoPortalLink">—</div></div>
+          <div class="info-item"><span class="label">Provider Phone</span><div id="infoProviderPhone">—</div></div>
+          <div class="info-item"><span class="label">Prior Authorization Phone</span><div id="infoPriorAuthPhone">—</div></div>
+          <div class="info-item"><span class="label">Prior Authorization Fax</span><div id="infoPriorAuthFax">—</div></div>
+          <div class="info-item"><span class="label">Verification Status</span><div id="infoVerification">—</div></div>
+          <div class="info-item"><span class="label">Submission Notes</span><div id="infoNotes">—</div></div>
+        </div>
+        <div class="mini" style="margin-top:12px">Official links and source pages used for the directory entry.</div>
+        <div class="source-list" id="insuranceSources" style="margin-top:8px"></div>
+        <div style="margin-top:14px"><strong>How the clinic team should submit</strong></div>
+        <ul id="submissionSteps"><li>Run the packet builder to see payer-specific submission steps.</li></ul>
+      </div>
+
+      <div class="two-col">
+        <div class="subcard green">
+          <h4>Requirements fulfilled</h4>
+          <ul id="metList"><li>Run the analysis to see fulfilled criteria.</li></ul>
+        </div>
+        <div class="subcard yellow">
+          <h4>Missing or unclear items</h4>
+          <ul id="missingList"><li>Run the analysis to identify missing elements.</li></ul>
+        </div>
+      </div>
+
+      <div class="subcard red">
+        <h4>Top denial risks</h4>
+        <ul id="denialList"><li>No denial risk assessment yet.</li></ul>
+      </div>
+
+      <div class="subcard blue">
+        <div class="card-head">
+          <div>
+            <h4>Customized insurance summary letter</h4>
+            <div class="mini">This letter is structured for a clinic-to-insurer prior authorization submission based only on the information you provided and the uploaded records.</div>
+          </div>
+        </div>
+        <div class="save-actions">
+          <button class="btn btn-secondary" id="saveTxtBtn">Download letter (.txt)</button>
+          <button class="btn btn-secondary" id="savePdfBtn">Download letter (.pdf)</button>
+          <button class="btn btn-soft" id="printLetterBtn">Print letter</button>
+        </div>
+        <div class="letterbox" id="letterBox">Generate the packet to build the insurance-facing summary letter.</div>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    const API_BASE = "";
+    const state = { settings:null, analysis:null, package:null, letter:"", insuranceDirectory:[] };
+
+    const $ = (id) => document.getElementById(id);
+    const esc = (value) => String(value ?? "").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+    function numericScoreValue(score){
+      if(score === null || score === undefined || score === "") return null;
+      const n = Number(score);
+      if(Number.isNaN(n)) return null;
+      if(n <= 1) return Math.round(n * 100);
+      return Math.round(n);
+    }
+
+    function uniqueSortedPayers(payers){
+      const seen = new Set();
+      return (Array.isArray(payers) ? payers : [])
+        .map(p => ({...p, display_name: String(p.display_name || p.label || p.name || "").trim()}))
+        .filter(p => p.display_name)
+        .filter(p => {
+          const key = p.display_name.toLowerCase();
+          if(seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        })
+        .sort((a,b) => a.display_name.localeCompare(b.display_name));
+    }
+
+    function setUploadStatus(inputId, statusId, emptyText){
+      const files = Array.from($(inputId).files || []);
+      $(statusId).textContent = files.length ? files.map(f => f.name).join(", ") : emptyText;
+    }
+
+    async function fileToPayload(file){
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const raw = String(reader.result || "");
+          resolve({ filename:file.name, content_type:file.type || "application/octet-stream", data_base64: raw.includes(",") ? raw.split(",",2)[1] : raw });
+        };
+        reader.onerror = () => reject(new Error(`Failed to read ${file.name}`));
+        reader.readAsDataURL(file);
+      });
+    }
+
+    async function allUploads(){
+      const files = [...Array.from($("clinicNoteFile").files || []), ...Array.from($("imagingFile").files || []), ...Array.from($("supportingDocs").files || [])];
+      const payloads = [];
+      for(const file of files) payloads.push(await fileToPayload(file));
+      return payloads;
+    }
+
+    function currentProvider(){
+      const value = $("providerSelect").value;
+      return (state.settings?.providers || []).find(p => p.name === value) || null;
+    }
+
+    function currentProcedure(){
+      const value = $("procedureSelect").value;
+      return (state.settings?.procedures || []).find(p => p.key === value) || null;
+    }
+
+    function buildPatientName(){
+      return [$("fname").value.trim(), $("lname").value.trim()].filter(Boolean).join(" ").trim();
+    }
+
+    function buildPayload(){
+      return {
+        patient: buildPatientName(),
+        fname: $("fname").value.trim(),
+        lname: $("lname").value.trim(),
+        dob: $("dob").value,
+        payer: $("payerSelect").value.trim(),
+        member_id: $("memberId").value.trim(),
+        provider: $("providerSelect").value.trim(),
+        provider_npi: $("providerNpi").value.trim(),
+        referring_provider: $("referringProvider").value.trim(),
+        proc_type: $("procedureSelect").value,
+        diagnosis: $("diagnosisSelect").value,
+        pain_score: $("painScore").value,
+        duration: $("durationSelect").value,
+        notes: $("notes").value.trim(),
+        clinical_note: $("notes").value.trim(),
+        conservative_treatment: $("conservativeTreatment").value.trim(),
+        imaging_summary: $("imagingSummary").value.trim(),
+      };
+    }
+
+    async function buildRequestPayload(){
+      const payload = buildPayload();
+      payload.uploaded_attachments = await allUploads();
+      return payload;
+    }
+
+    async function getJson(path, options){
+      const response = await fetch(`${API_BASE}${path}`, options);
+      if(!response.ok){
+        const text = await response.text();
+        throw new Error(text || `${response.status}`);
+      }
+      return response.json();
+    }
+
+    function populatePayers(payers){
+      const payerSel = $("payerSelect");
+      const cleaned = uniqueSortedPayers(payers);
+      payerSel.innerHTML = '<option value="">Select payer</option>' + cleaned.map(p => {
+        const name = String(p.display_name || "").trim();
+        return `<option value="${esc(name)}">${esc(name)}</option>`;
+      }).join("");
+    }
+
+    function populateProviders(settings){
+      const provSel = $("providerSelect");
+      const providers = settings.providers || [];
+      if(providers.length){
+        provSel.innerHTML = providers.map((p, idx) => `<option value="${esc(p.name)}" ${idx===0?'selected':''}>${esc(p.name)}</option>`).join('');
+        $("providerNpi").value = providers[0].npi || settings.npi || "";
+      } else {
+        const fallbackProvider = settings.provider_name || "Treating Physician";
+        provSel.innerHTML = `<option value="${esc(fallbackProvider)}">${esc(fallbackProvider)}</option>`;
+        $("providerNpi").value = settings.npi || "";
+      }
+    }
+
+    function populateProcedures(settings){
+      const procSel = $("procedureSelect");
+      const procedures = settings.procedures || [];
+      procSel.innerHTML = '<option value="">Select procedure</option>' + procedures.map(p => `<option value="${esc(p.key)}">${esc(p.description || p.key)}</option>`).join('');
+      renderDiagnosisOptions();
+    }
+
+    function populateSettings(settings){
+      state.settings = settings || {};
+      state.insuranceDirectory = uniqueSortedPayers(settings.additional_insurance_directory || settings.payers || []);
+      $("statusBadge").textContent = "Ready";
+      populatePayers(state.insuranceDirectory.length ? state.insuranceDirectory : settings.payers || []);
+      populateProviders(settings || {});
+      populateProcedures(settings || {});
+    }
+
+    function renderDiagnosisOptions(){
+      const proc = currentProcedure();
+      const diagSel = $("diagnosisSelect");
+      const options = proc?.diagnosis_options || [];
+      if(!options.length){
+        diagSel.innerHTML = '<option value="">Select procedure first</option>';
+        return;
+      }
+      diagSel.innerHTML = '<option value="">Select diagnosis</option>' + options.map(opt => {
+        const value = opt.code ? `${opt.code} - ${opt.label}` : opt.label;
+        return `<option value="${esc(value)}">${esc(value)}</option>`;
+      }).join('');
+    }
+
+    function renderQuickPills(analysis){
+      const score = numericScoreValue(analysis?.approval_score);
+      const likelihood = String(analysis?.approval_likelihood || 'N/A');
+      const missingCount = analysis?.missing_count ?? 0;
+      const criteriaMet = Number.isFinite(analysis?.criteria_met) && Number.isFinite(analysis?.criteria_total)
+        ? `${analysis.criteria_met} / ${analysis.criteria_total}`
+        : 'N/A';
+      const pills = [
+        { cls: likelihood.toLowerCase().includes('high') ? 'green' : likelihood.toLowerCase().includes('moderate') ? 'yellow' : likelihood.toLowerCase().includes('low') ? 'red' : 'blue', text:`Approval Likelihood: ${likelihood}` },
+        { cls: score === null ? 'blue' : score >= 80 ? 'green' : score >= 60 ? 'yellow' : 'red', text:`Support Score: ${score === null ? 'N/A' : `${score} / 100`}` },
+        { cls:'blue', text:`Criteria Met: ${criteriaMet}` },
+        { cls: missingCount ? 'yellow' : 'green', text:`Missing Items: ${missingCount}` },
+      ];
+      $("quickScoreRow").innerHTML = pills.map(p => `<span class="score-pill ${p.cls}">${esc(p.text)}</span>`).join('');
+    }
+
+    function renderList(targetId, items, mapper){
+      const arr = Array.isArray(items) ? items : [];
+      $(targetId).innerHTML = arr.length ? arr.map(item => `<li>${esc(mapper ? mapper(item) : item)}</li>`).join('') : '<li>None listed.</li>';
+    }
+
+    function setInsuranceText(id, value){ $(id).innerHTML = value || '—'; }
+
+    function renderInsuranceInfo(info){
+      setInsuranceText('infoPayer', esc(info?.name || $("payerSelect").value || '—'));
+      setInsuranceText('infoPortal', esc(info?.portal_name || '—'));
+      setInsuranceText('infoPortalLink', info?.portal_url ? `<a href="${esc(info.portal_url)}" target="_blank" rel="noopener">${esc(info.portal_url)}</a>` : '—');
+      setInsuranceText('infoProviderPhone', esc(info?.provider_phone || '—'));
+      setInsuranceText('infoPriorAuthPhone', esc(info?.prior_auth_phone || '—'));
+      setInsuranceText('infoPriorAuthFax', esc(info?.prior_auth_fax || '—'));
+      setInsuranceText('infoVerification', esc(info?.verification_status || '—'));
+      setInsuranceText('infoNotes', esc(info?.notes || '—'));
+      const sources = Array.isArray(info?.source_urls) ? info.source_urls.filter(Boolean) : [];
+      $("insuranceSources").innerHTML = sources.length ? sources.map(url => `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(url)}</a>`).join('') : '<span class="mini">No source links returned for this payer entry.</span>';
+    }
+
+    function renderResults(pkg){
+      state.package = pkg;
+      const analysis = pkg?.analysis || {};
+      const helper = pkg?.portal_helper || {};
+      const info = helper?.insurance_info || pkg?.insurance_info || {};
+      state.analysis = analysis;
+      state.letter = pkg?.letter || '';
+      renderQuickPills(analysis);
+      renderInsuranceInfo(info);
+      renderList('submissionSteps', info?.how_to_submit || pkg?.submission_steps || [], x => x);
+      renderList('metList', (analysis.criteria_results || []).filter(x => x.status === 'met'), x => x.label || x.element || x);
+      renderList('missingList', helper?.missing || analysis?.missing_elements || [], x => `${x.element || x.label || x}${x.detail ? `: ${x.detail}` : ''}`);
+      renderList('denialList', analysis?.denial_risk?.top_reasons || [], x => x);
+      $("letterBox").textContent = pkg?.letter || 'Letter not returned.';
+    }
+
+    function resetForm(){
+      document.querySelectorAll('input, textarea').forEach(el => { if(el.type === 'file') el.value = ''; else if(el.id !== 'providerNpi') el.value = ''; });
+      $("payerSelect").value = '';
+      $("durationSelect").value = '';
+      if((state.settings?.providers || []).length){
+        $("providerSelect").value = state.settings.providers[0].name;
+        $("providerNpi").value = state.settings.providers[0].npi || '';
+      }
+      $("procedureSelect").value = '';
+      renderDiagnosisOptions();
+      setUploadStatus('clinicNoteFile','clinicNoteStatus','No clinic note selected.');
+      setUploadStatus('imagingFile','imagingFileStatus','No imaging report selected.');
+      setUploadStatus('supportingDocs','supportingDocsStatus','No supporting files selected.');
+      $("quickScoreRow").innerHTML = '';
+      renderInsuranceInfo({});
+      $("submissionSteps").innerHTML = '<li>Run the packet builder to see payer-specific submission steps.</li>';
+      $("metList").innerHTML = '<li>Run the analysis to see fulfilled criteria.</li>';
+      $("missingList").innerHTML = '<li>Run the analysis to identify missing elements.</li>';
+      $("denialList").innerHTML = '<li>No denial risk assessment yet.</li>';
+      $("letterBox").textContent = 'Generate the packet to build the insurance-facing summary letter.';
+      state.analysis = null; state.package = null; state.letter = '';
+    }
+
+    function downloadTextFile(filename, text){
+      const blob = new Blob([text], {type:'text/plain;charset=utf-8'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1200);
+    }
+
+    function downloadLetterPdf(){
+      const text = $("letterBox").textContent || '';
+      if(!text.trim()) return;
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({unit:'pt', format:'letter'});
+      const margin = 40;
+      const width = doc.internal.pageSize.getWidth() - margin * 2;
+      const lines = doc.splitTextToSize(text, width);
+      let y = 50;
+      doc.setFont('times','normal');
+      doc.setFontSize(11);
+      lines.forEach(line => {
+        if(y > doc.internal.pageSize.getHeight() - 50){ doc.addPage(); y = 50; }
+        doc.text(line, margin, y);
+        y += 16;
+      });
+      doc.save('spineauth_letter.pdf');
+    }
+
+    async function generatePacket(){
+      const payload = await buildRequestPayload();
+      const pkg = await getJson('/build-package', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+      renderResults(pkg);
+    }
+
+    async function refreshLetter(){
+      const payload = await buildRequestPayload();
+      const result = await getJson('/generate-letter', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+      state.letter = result.letter || '';
+      $("letterBox").textContent = state.letter || 'Letter not returned.';
+    }
+
+    async function downloadPacket(){
+      const payload = await buildRequestPayload();
+      const response = await fetch('/export-package', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+      if(!response.ok) throw new Error(await response.text() || 'Export failed');
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      const match = /filename="?([^";]+)"?/i.exec(response.headers.get('Content-Disposition') || '');
+      a.href = url; a.download = match?.[1] || 'spineauth_packet.zip';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1200);
+    }
+
+    async function init(){
+      try{
+        let settings = null;
+        try{ settings = await getJson('/status'); } catch(err){ console.warn('/status failed, trying /settings', err); }
+        if(!settings){ settings = await getJson('/settings'); }
+        populateSettings(settings || {});
+      }catch(err){
+        $("statusBadge").textContent = 'Unable to load settings';
+        console.error(err);
+      }
+    }
+
+    $("procedureSelect").addEventListener('change', renderDiagnosisOptions);
+    $("providerSelect").addEventListener('change', () => { const provider = currentProvider(); $("providerNpi").value = provider?.npi || ''; });
+    $("clinicNoteFile").addEventListener('change', () => setUploadStatus('clinicNoteFile','clinicNoteStatus','No clinic note selected.'));
+    $("imagingFile").addEventListener('change', () => setUploadStatus('imagingFile','imagingFileStatus','No imaging report selected.'));
+    $("supportingDocs").addEventListener('change', () => setUploadStatus('supportingDocs','supportingDocsStatus','No supporting files selected.'));
+    $("analyzeBtn").addEventListener('click', async () => { try{ await generatePacket(); }catch(err){ alert(`Packet generation failed: ${err.message}`); console.error(err); } });
+    $("letterBtn").addEventListener('click', async () => { try{ await refreshLetter(); }catch(err){ alert(`Letter generation failed: ${err.message}`); console.error(err); } });
+    $("downloadBtn").addEventListener('click', async () => { try{ await downloadPacket(); }catch(err){ alert(`Download failed: ${err.message}`); console.error(err); } });
+    $("printBtn").addEventListener('click', () => window.print());
+    $("resetBtn").addEventListener('click', resetForm);
+    $("saveTxtBtn").addEventListener('click', () => downloadTextFile('spineauth_letter.txt', $("letterBox").textContent || ''));
+    $("savePdfBtn").addEventListener('click', downloadLetterPdf);
+    $("printLetterBtn").addEventListener('click', () => window.print());
+
+    init();
+  </script>
+</body>
+</html>

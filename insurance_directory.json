@@ -1,0 +1,1704 @@
+{
+  "generated_note": "Directory combines the clinic-provided list with web-verified major payer/vendor records. Blank phone/fax fields mean not yet verified from an authoritative source and should be checked manually.",
+  "insurers": [
+    {
+      "key": "aetna",
+      "display_name": "Aetna",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "Aetna Health Care Professionals",
+      "portal_url": "https://www.aetna.com/health-care-professionals/precertification.html",
+      "provider_phone": "1-888-632-3862",
+      "prior_auth_phone": "Use the number on the member ID card for many precertification requests",
+      "prior_auth_fax": "",
+      "support_url": "https://www.aetna.com/health-care-professionals/precertification.html",
+      "notes": "Aetna instructs providers to submit through EDI, the secure provider website, or by phone using the precertification number on the member ID card. Automated provider phone support is 1-888-632-3862 for many plans.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Review the Aetna precertification lists first.",
+        "Submit electronically through the secure provider website/EDI when possible.",
+        "For plan-specific requests, use the precertification number on the member ID card."
+      ],
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.aetna.com/health-care-professionals/precertification.html",
+        "https://www.aetna.com/health-care-professionals/claims-payment-reimbursement/electronic-transaction-tools.html"
+      ]
+    },
+    {
+      "key": "ambetter",
+      "display_name": "Ambetter",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "Ambetter Secure Provider Portal",
+      "portal_url": "https://www.ambetterhealth.com/providers.html",
+      "provider_phone": "1-877-687-1196",
+      "prior_auth_phone": "1-877-687-1196",
+      "prior_auth_fax": "1-855-537-3447",
+      "support_url": "https://www.ambetterhealth.com/en/tx/provider-resources/manuals-and-forms/prior-authorization-requirements-for-health-insurance-marketplac/",
+      "notes": "State-specific contact details can vary. This entry uses official Ambetter from Superior HealthPlan Texas prior-authorization contact details; verify the member state/plan before submission.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "verified_state_specific",
+      "source_urls": [
+        "https://www.ambetterhealth.com/en/tx/provider-resources/manuals-and-forms/prior-authorization-requirements-for-health-insurance-marketplac/",
+        "https://www.ambetterhealth.com/content/dam/centene/Superior/Ambetter/PDFs/TX-PAF-0697_May2016_OP.pdf",
+        "https://www.ambetterhealth.com/providers.html"
+      ]
+    },
+    {
+      "key": "anthem-blue-cross",
+      "display_name": "Anthem Blue Cross",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "Anthem Blue Cross provider portal",
+      "portal_url": "https://www.anthem.com/provider/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.anthem.com/provider/",
+      "notes": "Local BCBS/Blue plan; verify state/product-specific authorization contacts and delegated vendors.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "needs_manual_verification",
+      "source_urls": [
+        "https://www.anthem.com/provider/"
+      ]
+    },
+    {
+      "key": "ascension-complete",
+      "display_name": "Ascension Complete",
+      "aliases": [
+        "Ascension Complete",
+        "Ascension ABS US"
+      ],
+      "category": "payer",
+      "portal_name": "Ascension Complete",
+      "portal_url": "https://ascensioncomplete.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://ascensioncomplete.com/",
+      "notes": "MA plan; verify provider portal workflow by market.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://ascensioncomplete.com/"
+      ]
+    },
+    {
+      "key": "smarthealth",
+      "display_name": "Ascension SmartHealth",
+      "aliases": [
+        "SmartHealth Form",
+        "Ascension Smarthealth"
+      ],
+      "category": "payer",
+      "portal_name": "Ascension SmartHealth",
+      "portal_url": "https://ascensionsmarthealth.org/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://ascensionsmarthealth.org/",
+      "notes": "Employer plan; verify current provider workflow and forms.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://ascensionsmarthealth.org/"
+      ]
+    },
+    {
+      "key": "availity",
+      "display_name": "Availity",
+      "aliases": [
+        "Availty"
+      ],
+      "category": "payer",
+      "portal_name": "Availity",
+      "portal_url": "https://www.availity.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.availity.com/",
+      "notes": "Availity is a clearinghouse/provider portal used by many insurers rather than an insurer itself.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://www.availity.com/"
+      ]
+    },
+    {
+      "key": "bcbs",
+      "display_name": "Blue Cross Blue Shield",
+      "aliases": [
+        "Iexchange-BCBS"
+      ],
+      "category": "payer",
+      "portal_name": "BCBS provider workflow",
+      "portal_url": "https://www.bcbs.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.bcbs.com/",
+      "notes": "National association site only; actual workflow depends on the local BCBS plan.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://www.bcbs.com/"
+      ]
+    },
+    {
+      "key": "blue-cross-blue-shield-of-alabama",
+      "display_name": "Blue Cross Blue Shield of Alabama",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "Blue Cross Blue Shield of Alabama",
+      "portal_url": "https://providers.bcbsal.org/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://providers.bcbsal.org/",
+      "notes": "Local BCBS plan; verify current utilization management routing.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify the exact member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://providers.bcbsal.org/"
+      ]
+    },
+    {
+      "key": "bcbsil",
+      "display_name": "Blue Cross Blue Shield of Illinois",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "Blue Cross Blue Shield of Illinois provider portal",
+      "portal_url": "https://www.bcbsil.com/provider/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.bcbsil.com/provider/",
+      "notes": "Local BCBS/Blue plan; verify state/product-specific authorization contacts and delegated vendors.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "needs_manual_verification",
+      "source_urls": [
+        "https://www.bcbsil.com/provider/"
+      ]
+    },
+    {
+      "key": "blue-cross-blue-shield-of-michigan",
+      "display_name": "Blue Cross Blue Shield of Michigan",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "Blue Cross Blue Shield of Michigan",
+      "portal_url": "https://provider.bcbsm.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://provider.bcbsm.com/",
+      "notes": "Use the state-plan provider resources and verify delegated vendors.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify the exact member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://provider.bcbsm.com/"
+      ]
+    },
+    {
+      "key": "bcbstx",
+      "display_name": "Blue Cross Blue Shield of Texas",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "Blue Cross Blue Shield of Texas provider portal",
+      "portal_url": "https://www.bcbstx.com/provider/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.bcbstx.com/provider/",
+      "notes": "Local BCBS/Blue plan; verify state/product-specific authorization contacts and delegated vendors.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "needs_manual_verification",
+      "source_urls": [
+        "https://www.bcbstx.com/provider/"
+      ]
+    },
+    {
+      "key": "blue-shield-of-california",
+      "display_name": "Blue Shield of California",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "Blue Shield of California provider portal",
+      "portal_url": "https://www.blueshieldca.com/provider",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.blueshieldca.com/provider",
+      "notes": "Local BCBS/Blue plan; verify state/product-specific authorization contacts and delegated vendors.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "needs_manual_verification",
+      "source_urls": [
+        "https://www.blueshieldca.com/provider"
+      ]
+    },
+    {
+      "key": "care-improvement-plus",
+      "display_name": "Care Improvement Plus",
+      "aliases": [
+        "Care Improvements",
+        "Secure Horizons Medicare"
+      ],
+      "category": "payer",
+      "portal_name": "Legacy / historical",
+      "portal_url": "",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "",
+      "notes": "Legacy/older plan names may now be inactive or absorbed; verify current payer identity manually.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "needs_manual_verification",
+      "source_urls": []
+    },
+    {
+      "key": "carefirst-bcbs",
+      "display_name": "CareFirst BlueCross BlueShield",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "CareFirst BlueCross BlueShield provider portal",
+      "portal_url": "https://www.carefirst.com/providers/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.carefirst.com/providers/",
+      "notes": "Local BCBS/Blue plan; verify state/product-specific authorization contacts and delegated vendors.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "needs_manual_verification",
+      "source_urls": [
+        "https://www.carefirst.com/providers/"
+      ]
+    },
+    {
+      "key": "carelon",
+      "display_name": "Carelon Medical Benefits Management",
+      "aliases": [
+        "AIM",
+        "AIM Carelon",
+        "AIM / Carelon",
+        "AIM/ Carelon"
+      ],
+      "category": "vendor",
+      "portal_name": "Carelon Provider Portal",
+      "portal_url": "https://providers.carelonmedicalbenefitsmanagement.com/",
+      "provider_phone": "844-411-9622",
+      "prior_auth_phone": "1-800-252-2021",
+      "prior_auth_fax": "844-834-2908",
+      "support_url": "https://providers.carelonmedicalbenefitsmanagement.com/radiology/frequently-asked-questions/",
+      "notes": "Carelon is often a delegated utilization management vendor rather than the insurer itself. Anthem post-acute provider resources list provider network phone/fax; urgent FAQ lists 1-800-252-2021.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Confirm whether the member\u2019s plan delegates the service to Carelon.",
+        "Use the Carelon provider portal for the delegated program.",
+        "If urgent, use the Carelon contact process listed in the applicable FAQ or plan resource."
+      ],
+      "verification_status": "verified",
+      "source_urls": [
+        "https://providers.carelonmedicalbenefitsmanagement.com/postacute/provider-materials/anthem-provider-resources/",
+        "https://providers.carelonmedicalbenefitsmanagement.com/radiology/frequently-asked-questions/"
+      ]
+    },
+    {
+      "key": "cigna-healthcare",
+      "display_name": "Cigna Healthcare",
+      "aliases": [
+        "Cigna"
+      ],
+      "category": "payer",
+      "portal_name": "Cigna for Health Care Professionals",
+      "portal_url": "https://www.cigna.com/health-care-providers/coverage-and-claims/precertification",
+      "provider_phone": "1-800-882-4462",
+      "prior_auth_phone": "1-800-882-4462",
+      "prior_auth_fax": "1-866-873-8279",
+      "support_url": "https://www.cigna.com/health-care-providers",
+      "notes": "Cigna allows online, phone, and fax submission for many prior-authorization requests. Some services route through eviCore/Evernorth.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Confirm whether the service needs precertification.",
+        "Submit electronically or call 1-800-882-4462.",
+        "If faxing, use the appropriate Cigna form and fax 1-866-873-8279."
+      ],
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.cigna.com/health-care-providers/coverage-and-claims/precertification",
+        "https://static.cigna.com/assets/chcp/pdf/resourceLibrary/medical/prior-authorization-fax-form.pdf",
+        "https://www.cigna.com/health-care-providers"
+      ]
+    },
+    {
+      "key": "cohere",
+      "display_name": "Cohere Health",
+      "aliases": [
+        "Cohere (Humana)",
+        "COHERE- Pita acct-"
+      ],
+      "category": "vendor",
+      "portal_name": "Cohere Health",
+      "portal_url": "https://www.coherehealth.com/providers",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.coherehealth.com/providers",
+      "notes": "Delegated authorization vendor; confirm which plan and service line use Cohere.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://www.coherehealth.com/providers"
+      ]
+    },
+    {
+      "key": "curative",
+      "display_name": "Curative",
+      "aliases": [
+        "Curative"
+      ],
+      "category": "payer",
+      "portal_name": "Curative Provider",
+      "portal_url": "https://curative.com/for-providers",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://curative.com/for-providers",
+      "notes": "Verify current provider portal and UM workflow by employer plan.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://curative.com/for-providers"
+      ]
+    },
+    {
+      "key": "emblemhealth",
+      "display_name": "EmblemHealth",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "EmblemHealth",
+      "portal_url": "https://www.emblemhealth.com/providers",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.emblemhealth.com/providers",
+      "notes": "Verify product-specific prior authorization guidance.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify the exact member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://www.emblemhealth.com/providers"
+      ]
+    },
+    {
+      "key": "eqhs",
+      "display_name": "eQHealth Solutions",
+      "aliases": [
+        "EQHS  (ABS)"
+      ],
+      "category": "vendor",
+      "portal_name": "eQHealth Solutions",
+      "portal_url": "https://www.eqhs.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.eqhs.com/",
+      "notes": "UM vendor; verify delegated workflow by plan.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://www.eqhs.com/"
+      ]
+    },
+    {
+      "key": "evicore",
+      "display_name": "eviCore by Evernorth",
+      "aliases": [
+        "MedSolutions",
+        "MedSolutions/EviCore",
+        "MedSolutions Medicaid"
+      ],
+      "category": "vendor",
+      "portal_name": "eviCore Provider Hub",
+      "portal_url": "https://www.evicore.com/provider",
+      "provider_phone": "1-800-646-0418 option 2",
+      "prior_auth_phone": "1-800-646-0418 option 2",
+      "prior_auth_fax": "",
+      "support_url": "https://www.evicore.com/provider/provider-support",
+      "notes": "eviCore is often a delegated prior authorization vendor used by multiple insurers.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Use the eviCore Provider Hub and select the health plan and solution.",
+        "Call Provider Support at 1-800-646-0418 option 2 if needed.",
+        "Attach the required clinical information checklist items for the selected solution."
+      ],
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.evicore.com/provider",
+        "https://www.evicore.com/provider/provider-support",
+        "https://www.evicore.com/resources"
+      ]
+    },
+    {
+      "key": "evolent",
+      "display_name": "Evolent",
+      "aliases": [
+        "Evolent"
+      ],
+      "category": "vendor",
+      "portal_name": "RadMD / Evolent",
+      "portal_url": "https://www.radmd.com/",
+      "provider_phone": "1-800-327-0641",
+      "prior_auth_phone": "Varies by health plan",
+      "prior_auth_fax": "",
+      "support_url": "https://www1.radmd.com/utilityrad/contactus",
+      "notes": "Evolent specialty programs commonly route through RadMD; plan-specific authorization phone numbers vary.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Check the member\u2019s delegated vendor workflow first.",
+        "Use RadMD for online requests when the plan uses Evolent.",
+        "Use the plan-specific phone number from the Evolent/RadMD health-plan phone-number list if phone submission is needed."
+      ],
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www1.radmd.com/utilityrad/contactus",
+        "https://www1.radmd.com/sites/default/files/2023-09/Health%20Plan%20Call%20Center%20Authorization%20Phone%20Numbers%2009012023.pdf"
+      ]
+    },
+    {
+      "key": "florida-blue",
+      "display_name": "Florida Blue",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "Florida Blue",
+      "portal_url": "https://www.floridablue.com/providers",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.floridablue.com/providers",
+      "notes": "Florida Blue provider workflow; verify product-specific authorization requirements.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify the exact member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://www.floridablue.com/providers"
+      ]
+    },
+    {
+      "key": "fox-everett",
+      "display_name": "Fox Everett",
+      "aliases": [
+        "Fox Everette"
+      ],
+      "category": "vendor",
+      "portal_name": "Fox Everett",
+      "portal_url": "https://www.foxeverett.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.foxeverett.com/",
+      "notes": "Third-party administrator/vendor entry; verify current workflow.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://www.foxeverett.com/"
+      ]
+    },
+    {
+      "key": "health-net",
+      "display_name": "Health Net",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "Health Net",
+      "portal_url": "https://provider.healthnet.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://provider.healthnet.com/",
+      "notes": "Verify state-specific provider workflow and delegated vendors.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify the exact member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://provider.healthnet.com/"
+      ]
+    },
+    {
+      "key": "highmark-bcbs",
+      "display_name": "Highmark Blue Cross Blue Shield",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "Highmark Blue Cross Blue Shield provider portal",
+      "portal_url": "https://www.highmark.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.highmark.com/",
+      "notes": "Local BCBS/Blue plan; verify state/product-specific authorization contacts and delegated vendors.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "needs_manual_verification",
+      "source_urls": [
+        "https://www.highmark.com/"
+      ]
+    },
+    {
+      "key": "horizon-bcbs",
+      "display_name": "Horizon Blue Cross Blue Shield of New Jersey",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "Horizon Blue Cross Blue Shield of New Jersey provider portal",
+      "portal_url": "https://www.horizonblue.com/providers",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.horizonblue.com/providers",
+      "notes": "Local BCBS/Blue plan; verify state/product-specific authorization contacts and delegated vendors.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "needs_manual_verification",
+      "source_urls": [
+        "https://www.horizonblue.com/providers"
+      ]
+    },
+    {
+      "key": "humana",
+      "display_name": "Humana",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "Humana Provider Portal",
+      "portal_url": "https://provider.humana.com/coverage-claims/prior-authorizations",
+      "provider_phone": "1-800-611-1474",
+      "prior_auth_phone": "1-800-611-1474",
+      "prior_auth_fax": "1-800-658-9457",
+      "support_url": "https://provider.humana.com/coverage-claims/prior-authorizations/prior-authorization-lists",
+      "notes": "For commercial coverage, Humana publishes submission by portal, phone, or fax. Verify product-specific requirements before submitting.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Use the Humana prior authorization search tool first.",
+        "For commercial coverage, submit by portal, phone, or fax.",
+        "Attach full clinical documentation and any required forms."
+      ],
+      "verification_status": "verified",
+      "source_urls": [
+        "https://provider.humana.com/coverage-claims/prior-authorizations",
+        "https://provider.humana.com/coverage-claims/prior-authorizations/prior-authorization-lists"
+      ]
+    },
+    {
+      "key": "independence-blue-cross",
+      "display_name": "Independence Blue Cross",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "Independence Blue Cross provider portal",
+      "portal_url": "https://provcomm.ibx.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://provcomm.ibx.com/",
+      "notes": "Local BCBS/Blue plan; verify state/product-specific authorization contacts and delegated vendors.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "needs_manual_verification",
+      "source_urls": [
+        "https://provcomm.ibx.com/"
+      ]
+    },
+    {
+      "key": "kaiser-permanente",
+      "display_name": "Kaiser Permanente",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "Kaiser Permanente",
+      "portal_url": "https://healthy.kaiserpermanente.org/providers",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://healthy.kaiserpermanente.org/for-providers",
+      "notes": "Regional workflows vary. Verify market-specific referral/authorization rules.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify the exact member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://healthy.kaiserpermanente.org/providers",
+        "https://healthy.kaiserpermanente.org/for-providers"
+      ]
+    },
+    {
+      "key": "medicare",
+      "display_name": "Medicare",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "Medicare",
+      "portal_url": "https://www.cms.gov/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.cms.gov/data-research/monitoring-programs/medicare-fee-service-compliance-programs/prior-authorization-and-pre-claim-review-initiatives",
+      "notes": "Traditional Medicare prior authorization is service-specific, not universal.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify the exact member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://www.cms.gov/",
+        "https://www.cms.gov/data-research/monitoring-programs/medicare-fee-service-compliance-programs/prior-authorization-and-pre-claim-review-initiatives"
+      ]
+    },
+    {
+      "key": "mediview",
+      "display_name": "Mediview",
+      "aliases": [
+        "Mediview"
+      ],
+      "category": "vendor",
+      "portal_name": "MediView",
+      "portal_url": "https://www.mediview.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.mediview.com/",
+      "notes": "Vendor/portal entry from clinic list; verify current use case.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://www.mediview.com/"
+      ]
+    },
+    {
+      "key": "meritain-health",
+      "display_name": "Meritain Health",
+      "aliases": [
+        "Meritain"
+      ],
+      "category": "payer",
+      "portal_name": "Meritain Health Provider Portal",
+      "portal_url": "https://www.meritain.com/resources-for-providers-meritain-health-provider-portal/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.meritain.com/wp-content/uploads/2021/02/Form-OIC_Meritain.p65.pdf",
+      "notes": "Meritain\u2019s provider portal supports eligibility, claims, forms, and precertification support. Meritain predetermination instructions say to fax to the number shown on the applicable form.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Use the Meritain provider portal for eligibility, claims, forms, and support.",
+        "Review the applicable predetermination/precertification form for the service requested.",
+        "Fax each request to the form-specific fax number listed on that form."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://www.meritain.com/resources-for-providers-meritain-health-provider-portal/",
+        "https://www.meritain.com/wp-content/uploads/2021/02/Form-OIC_Meritain.p65.pdf"
+      ]
+    },
+    {
+      "key": "molina-healthcare",
+      "display_name": "Molina Healthcare",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "Molina Healthcare",
+      "portal_url": "https://provider.molinahealthcare.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://provider.molinahealthcare.com/",
+      "notes": "Medicaid and marketplace rules may vary by state.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify the exact member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://provider.molinahealthcare.com/"
+      ]
+    },
+    {
+      "key": "nia",
+      "display_name": "National Imaging Associates (NIA)",
+      "aliases": [
+        "NIA"
+      ],
+      "category": "vendor",
+      "portal_name": "RadMD / NIA",
+      "portal_url": "https://www.radmd.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "Varies by health plan program",
+      "prior_auth_fax": "",
+      "support_url": "https://www1.radmd.com/sites/default/files/2023-10/Coordinated%20Care%20Med%20Spec%20FAQ%20.pdf",
+      "notes": "NIA is commonly the delegated imaging/specialty UM vendor. Program-specific phone numbers vary by health plan.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Check the member\u2019s health plan program in RadMD/NIA.",
+        "Use RadMD to request authorization whenever possible.",
+        "Use the plan-specific phone number or OCR fax coversheet when directed by the program FAQ."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://www1.radmd.com/sites/default/files/2023-10/Coordinated%20Care%20Med%20Spec%20FAQ%20.pdf",
+        "https://www1.radmd.com/sites/default/files/2023-10/First%20Choice%20VIP%20Care%20Plus%20SC%20MSS%20%20FAQ%2010062023.pdf"
+      ]
+    },
+    {
+      "key": "navinet",
+      "display_name": "NaviNet",
+      "aliases": [
+        "NaviNet"
+      ],
+      "category": "payer",
+      "portal_name": "NaviNet",
+      "portal_url": "https://navinet.navimedix.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://navinet.navimedix.com/",
+      "notes": "Portal used by multiple payers.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://navinet.navimedix.com/"
+      ]
+    },
+    {
+      "key": "novitas",
+      "display_name": "Novitas Solutions",
+      "aliases": [
+        "Novitas/Medicare"
+      ],
+      "category": "payer",
+      "portal_name": "Novitas Medicare",
+      "portal_url": "https://www.novitas-solutions.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.novitas-solutions.com/",
+      "notes": "Medicare contractor; use contractor-specific guidance.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://www.novitas-solutions.com/"
+      ]
+    },
+    {
+      "key": "oscar-health",
+      "display_name": "Oscar Health",
+      "aliases": [
+        "Oscar"
+      ],
+      "category": "payer",
+      "portal_name": "Oscar Provider Portal",
+      "portal_url": "https://www.hioscar.com/providers/resources",
+      "provider_phone": "1-855-672-2755",
+      "prior_auth_phone": "1-855-672-2755",
+      "prior_auth_fax": "1-844-814-2259",
+      "support_url": "https://www.hioscar.com/prior-authorization-statistics",
+      "notes": "Oscar FAQ lists Provider Services at 1-855-672-2755, option 4. Oscar prior authorization statistics page states in-network providers can use the Provider Portal or call 1-855-672-2755 for Oscar plans.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Use Oscar\u2019s Provider Portal for authorization requirements and requests.",
+        "If needed, call Provider Services at 1-855-672-2755.",
+        "For certain drug/fax workflows, Oscar lists 1-844-814-2259."
+      ],
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.hioscar.com/faq/how-do-i-contact-Oscar",
+        "https://www.hioscar.com/prior-authorization-statistics",
+        "https://www.hioscar.com/faq/what-do-i-do-if-my-prescription-drug-isnt-covered-by-my-plan"
+      ]
+    },
+    {
+      "key": "pacificsource",
+      "display_name": "PacificSource",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "PacificSource",
+      "portal_url": "https://pacificsource.com/providers",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://pacificsource.com/providers",
+      "notes": "Regional plan; verify current prior authorization requirements.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify the exact member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://pacificsource.com/providers"
+      ]
+    },
+    {
+      "key": "quantum-health",
+      "display_name": "Quantum Health",
+      "aliases": [
+        "Some UMR/Quantum Health"
+      ],
+      "category": "payer",
+      "portal_name": "Quantum Health",
+      "portal_url": "https://www.quantum-health.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.quantum-health.com/",
+      "notes": "Navigation/advocacy platform; verify plan-specific authorization route.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://www.quantum-health.com/"
+      ]
+    },
+    {
+      "key": "radmd",
+      "display_name": "RadMD",
+      "aliases": [
+        "RadMD/NIA",
+        "RadMD / NIA / Evolent",
+        "Rad Consult Humana"
+      ],
+      "category": "vendor",
+      "portal_name": "RadMD",
+      "portal_url": "https://www.radmd.com/",
+      "provider_phone": "1-800-327-0641",
+      "prior_auth_phone": "Health-plan-specific; RadMD says to use the designated number for your plan",
+      "prior_auth_fax": "",
+      "support_url": "https://www1.radmd.com/utilityrad/contactus",
+      "notes": "RadMD is a portal used by Evolent/NIA programs. Contact numbers can vary by health plan. RadMD strongly recommends using the portal.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Use RadMD first for authorization requests and status.",
+        "If you need phone support, call the designated plan-specific number or RadMD Provider Support at 1-800-327-0641.",
+        "Attach the OCR fax cover sheet from RadMD when fax workflows are required."
+      ],
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www1.radmd.com/utilityrad/contactus",
+        "https://www1.radmd.com/sites/default/files/2023-09/Health%20Plan%20Call%20Center%20Authorization%20Phone%20Numbers%2009012023.pdf"
+      ]
+    },
+    {
+      "key": "regence",
+      "display_name": "Regence BlueShield",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "Regence BlueShield provider portal",
+      "portal_url": "https://www.regence.com/provider",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.regence.com/provider",
+      "notes": "Local BCBS/Blue plan; verify state/product-specific authorization contacts and delegated vendors.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "needs_manual_verification",
+      "source_urls": [
+        "https://www.regence.com/provider"
+      ]
+    },
+    {
+      "key": "sana-benefits",
+      "display_name": "Sana Benefits",
+      "aliases": [
+        "SANA Benefits"
+      ],
+      "category": "payer",
+      "portal_name": "Sana Benefits",
+      "portal_url": "https://www.sana-benefits.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.sana-benefits.com/",
+      "notes": "Employer-sponsored plan administrator; verify prior auth workflow on current provider resources.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://www.sana-benefits.com/"
+      ]
+    },
+    {
+      "key": "sendero-health-plans",
+      "display_name": "Sendero Health Plans",
+      "aliases": [
+        "Sendero",
+        "Sendero- Pita acct",
+        "Sandero Medicaid & CHIP"
+      ],
+      "category": "payer",
+      "portal_name": "Sendero Provider Resources",
+      "portal_url": "https://senderohealth.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://senderohealth.com/",
+      "notes": "Regional plan; verify current provider workflow and product line.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://senderohealth.com/"
+      ]
+    },
+    {
+      "key": "seton-charity",
+      "display_name": "Seton Charity",
+      "aliases": [
+        "Seton Charity"
+      ],
+      "category": "payer",
+      "portal_name": "Local financial-assistance / institutional program",
+      "portal_url": "",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "",
+      "notes": "Not a standard commercial payer; verify local submission process manually.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "needs_manual_verification",
+      "source_urls": []
+    },
+    {
+      "key": "seton-map",
+      "display_name": "Seton MAP",
+      "aliases": [
+        "Seton MAP"
+      ],
+      "category": "payer",
+      "portal_name": "Local assistance program",
+      "portal_url": "",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "",
+      "notes": "Not a standard commercial payer; verify local submission process manually.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "needs_manual_verification",
+      "source_urls": []
+    },
+    {
+      "key": "superior-healthplan",
+      "display_name": "Superior HealthPlan",
+      "aliases": [
+        "Superior Health Plan"
+      ],
+      "category": "payer",
+      "portal_name": "Superior Provider Portal",
+      "portal_url": "https://provider.superiorhealthplan.com",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://provider.superiorhealthplan.com",
+      "notes": "State Medicaid and Ambetter-related workflows can vary by product.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://provider.superiorhealthplan.com"
+      ]
+    },
+    {
+      "key": "tmhp",
+      "display_name": "Texas Medicaid / TMHP",
+      "aliases": [
+        "THMP",
+        "Texas Medicaid"
+      ],
+      "category": "payer",
+      "portal_name": "Texas Medicaid & Healthcare Partnership",
+      "portal_url": "https://www.tmhp.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.tmhp.com/",
+      "notes": "Use TMHP for Texas Medicaid provider workflows.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://www.tmhp.com/"
+      ]
+    },
+    {
+      "key": "tricare",
+      "display_name": "TRICARE",
+      "aliases": [
+        "Tricare Prime",
+        "Humana Tricare"
+      ],
+      "category": "payer",
+      "portal_name": "TRICARE Provider / Regional Contractor Workflow",
+      "portal_url": "https://tricare.mil/referrals",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://tricare.triwest.com/en/provider/tricare-provider-handbook/tricare-referrals-and-authorizations/",
+      "notes": "TRICARE referral/authorization workflows are regional. TRICARE West uses Availity/TriWest referral management for referrals and pre-authorizations. Pharmacy prior auth forms are handled through Express Scripts and can be submitted by mail, phone, or fax depending on the form.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Identify the correct TRICARE region and contractor first.",
+        "For TRICARE West, submit referrals and pre-authorizations through Availity/TriWest referral management.",
+        "Attach all supporting clinical documentation required by the contractor or pharmacy form."
+      ],
+      "verification_status": "verified",
+      "source_urls": [
+        "https://tricare.mil/referrals",
+        "https://tricare.triwest.com/en/provider/tricare-provider-handbook/tricare-referrals-and-authorizations/",
+        "https://tricare.mil/PatientResources/Forms/Pharmacy",
+        "https://newsroom.tricare.mil/News/TRICARE-News/Article/4192526/getting-prior-authorizations-for-tricare-prescriptions-your-questions-answered"
+      ]
+    },
+    {
+      "key": "triwest",
+      "display_name": "TriWest",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "TriWest / Availity Referral Management",
+      "portal_url": "https://tricare.triwest.com/en/provider/tricare-provider-handbook/tricare-referrals-and-authorizations/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://tricare.triwest.com/en/provider/clinical-programs/",
+      "notes": "TriWest states that referrals and pre-authorizations can be submitted using the online referral management system on Availity. Some clinical programs list fax 1-877-989-0025 for documentation.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Use Availity referral management for referral and authorization requests.",
+        "Attach supporting clinical documentation to the online request.",
+        "For program-specific documentation requests, follow the TriWest instructions and fax numbers shown in the applicable program guidance."
+      ],
+      "verification_status": "verified",
+      "source_urls": [
+        "https://tricare.triwest.com/en/provider/tricare-provider-handbook/tricare-referrals-and-authorizations/",
+        "https://tricare.triwest.com/en/provider/clinical-programs/"
+      ]
+    },
+    {
+      "key": "turning-point",
+      "display_name": "TurningPoint Healthcare Solutions",
+      "aliases": [
+        "Turning Point"
+      ],
+      "category": "vendor",
+      "portal_name": "TurningPoint Provider Portal",
+      "portal_url": "https://www.myturningpoint-healthcare.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.myturningpoint-healthcare.com/",
+      "notes": "Delegated authorization vendor used by certain plans/services.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://www.myturningpoint-healthcare.com/"
+      ]
+    },
+    {
+      "key": "umr",
+      "display_name": "UMR",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "UMR Provider Portal",
+      "portal_url": "https://www.umr.com/provider/prior-authorization",
+      "provider_phone": "",
+      "prior_auth_phone": "Use the number on the member ID card to confirm benefits and whether prior authorization is required",
+      "prior_auth_fax": "877-442-1102",
+      "support_url": "https://provider.umr.com/tpa-ap-web/?navDeepDive=ProviderGetPreauthMenu",
+      "notes": "UMR\u2019s prior authorization requirement search and submission tool is available for most UMR-administered plans through the secure provider portal. A UMR fax cover sheet lists 877-442-1102.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Check prior authorization requirements in the UMR provider portal.",
+        "Use the portal submission tool for most UMR-administered plans.",
+        "If faxing a predetermination, use 877-442-1102 with the appropriate cover sheet."
+      ],
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.umr.com/provider/prior-authorization",
+        "https://www.umr.com/content/dam/umr/en/findform/forms/PRE_D_FAX_COVER_SHEET.pdf",
+        "https://provider.umr.com/tpa-ap-web/?navDeepDive=ProviderGetPreauthMenu"
+      ]
+    },
+    {
+      "key": "unitedhealthcare",
+      "display_name": "UnitedHealthcare",
+      "aliases": [
+        "United Healthcare",
+        "UHC"
+      ],
+      "category": "payer",
+      "portal_name": "UnitedHealthcare Provider Portal",
+      "portal_url": "https://www.uhcprovider.com/en/prior-auth-advance-notification.html",
+      "provider_phone": "1-888-980-8728",
+      "prior_auth_phone": "1-800-310-6826",
+      "prior_auth_fax": "866-940-7328",
+      "support_url": "https://www.uhcprovider.com/en/contact-us.html",
+      "notes": "Use the Prior Authorization and Notification tool on UHCprovider whenever possible. Phone and fax shown here are official prior-authorization contacts published by UnitedHealthcare provider resources.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Check whether prior authorization is required in the Prior Authorization and Notification tool.",
+        "Submit online through UHCprovider whenever possible.",
+        "If the member/plan workflow allows fax, use the plan-specific fax number shown in UHC guidance."
+      ],
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.uhcprovider.com/en/contact-us.html",
+        "https://www.uhcprovider.com/en/prior-auth-advance-notification.html",
+        "https://www.uhcprovider.com/content/dam/provider/docs/public/prior-auth/uhccp-pharmacy-forms/PA-Request-Form-UHC-Community-Plan.pdf"
+      ]
+    },
+    {
+      "key": "ushealth-group",
+      "display_name": "USHEALTH Group",
+      "aliases": [
+        "USHEALTH GROUP"
+      ],
+      "category": "payer",
+      "portal_name": "USHEALTH Group",
+      "portal_url": "https://www.ushealthgroup.com/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.ushealthgroup.com/",
+      "notes": "Plan/company-level site; verify provider workflow by product.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://www.ushealthgroup.com/"
+      ]
+    },
+    {
+      "key": "va-community-care",
+      "display_name": "VA Community Care",
+      "aliases": [
+        "VA",
+        "Veterans & Champs VA"
+      ],
+      "category": "payer",
+      "portal_name": "VA Community Care",
+      "portal_url": "https://www.va.gov/COMMUNITYCARE/providers/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.va.gov/COMMUNITYCARE/providers/",
+      "notes": "Community Care referral/authorization workflows depend on VA program guidance.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://www.va.gov/COMMUNITYCARE/providers/"
+      ]
+    },
+    {
+      "key": "wellcare",
+      "display_name": "Wellcare",
+      "aliases": [],
+      "category": "payer",
+      "portal_name": "Wellcare",
+      "portal_url": "https://www.wellcare.com/en/Providers",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://www.wellcare.com/en/Providers",
+      "notes": "Use state/product-specific provider guidance.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify the exact member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://www.wellcare.com/en/Providers"
+      ]
+    },
+    {
+      "key": "wellmed",
+      "display_name": "WellMed",
+      "aliases": [
+        "WELLMED",
+        "WellMed- Pita's acct-"
+      ],
+      "category": "payer",
+      "portal_name": "WellMed Provider Portal",
+      "portal_url": "https://eprg.wellmed.net/",
+      "provider_phone": "",
+      "prior_auth_phone": "",
+      "prior_auth_fax": "",
+      "support_url": "https://eprg.wellmed.net/",
+      "notes": "WellMed workflows can be tied to delegated entities and plan products.",
+      "documents_required": [
+        "Clinical note",
+        "Imaging report",
+        "Prior conservative treatment documentation",
+        "Procedure / CPT details"
+      ],
+      "how_to_submit": [
+        "Verify member plan and site-of-service requirements.",
+        "Use the payer or delegated vendor portal whenever available.",
+        "Attach the full clinical packet with diagnosis, imaging, and prior treatment history."
+      ],
+      "verification_status": "partially_verified",
+      "source_urls": [
+        "https://eprg.wellmed.net/"
+      ]
+    }
+  ]
+}
